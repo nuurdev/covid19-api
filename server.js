@@ -4,11 +4,24 @@ const cors = require("cors");
 const path = require("path");
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://localhost:3000", "http://yourapp.com"],
-  })
-);
+const allowCrossDomain = function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET");
+
+  if ("OPTIONS" == req.method) {
+    res.send(200);
+  } else {
+    next();
+  }
+};
+
+app.use(allowCrossDomain);
+
+// app.use(
+//   cors({
+//     origin: ["https://localhost:3000", "http://yourapp.com"],
+//   })
+// );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
