@@ -2,6 +2,7 @@ const fetch = require("node-fetch");
 const fs = require("fs");
 
 async function updateData() {
+  console.log("started worker");
   let resultsArray = [];
   const downloadPath = "data/global.json";
   await fetch("https://api.covid19api.com/all")
