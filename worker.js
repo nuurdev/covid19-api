@@ -41,4 +41,4 @@ async function updateData() {
   fs.writeFileSync(downloadPath, JSON.stringify(resultsArray));
 }
 
-module.exports = updateData;
+updateData();
