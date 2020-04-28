@@ -27,6 +27,6 @@ app.get("/global", (req, res) => {
 // Use * * * * * to run every minute for testing
 cron.schedule("00 05 * * *", () => updateData());
 
-const server = app.listen(3001, () => {
+const server = app.listen(process.env.PORT || 3001, () => {
   console.log("listening on port %s...", server.address().port);
 });
