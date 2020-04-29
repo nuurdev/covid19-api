@@ -19,7 +19,9 @@ app.get("/", (req, res) => {
 
 app.get("/global", (req, res) => {
   res.header("Content-Type", "application/json");
-  res.sendFile(path.join(__dirname, "data/global.json"));
+  res.sendFile(path.join(__dirname, "data/global.json"), {
+    headers: { "Cache-Control": "no-cache" },
+  });
 });
 
 const server = app.listen(process.env.PORT || 3001, () => {
