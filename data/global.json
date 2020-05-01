@@ -684,5 +684,19 @@
     "Deaths": 217098,
     "Active": 0,
     "Date": "2020-04-28T00:00:00Z"
+  },
+  {
+    "Confirmed": 3191815,
+    "Recovered": 972074,
+    "Deaths": 227580,
+    "Active": 0,
+    "Date": "2020-04-29T00:00:00Z"
+  },
+  {
+    "Confirmed": 3254584,
+    "Recovered": 1014108,
+    "Deaths": 233328,
+    "Active": 0,
+    "Date": "2020-04-30T00:00:00Z"
   }
 ]

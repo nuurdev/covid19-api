@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 const allowCrossDomain = function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://covidnow.app");
   res.header("Access-Control-Allow-Methods", "GET");
   next();
 };
