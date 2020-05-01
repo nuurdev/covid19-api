@@ -1,11 +1,11 @@
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-async function updateData() {
+function updateData() {
   console.log("started worker");
   let resultsArray = [];
   const downloadPath = "data/global.json";
-  await fetch("https://api.covid19api.com/all")
+  fetch("https://api.covid19api.com/all")
     .then((response) => response.json())
     .then((data) => {
       const result = {};
@@ -38,8 +38,8 @@ async function updateData() {
         };
       });
     })
+    .then(() => fs.writeFileSync(downloadPath, JSON.stringify(resultsArray)))
     .catch((error) => console.error(error));
-  fs.writeFileSync(downloadPath, JSON.stringify(resultsArray));
 }
 
 updateData();
